@@ -1,0 +1,20 @@
+# Pi-hole wildcard denylist — BADBOX 2.0 (Magcubic HY350 Max / Allwinner H726)
+# Add each as a Pi-hole regex/wildcard deny (Domains -> Add domain -> Wildcard).
+# All entries below were verified resolving to 0.0.0.0 after blocking.
+# No off-the-shelf adlist covers this projector malware — this is a targeted list.
+#
+akisinn.info
+aodintech.com
+dewrain.life
+hmma.baidu.com
+hotack.com
+ipdatacloud.com
+kkoip.com
+leiniao.com
+pixelpioneerss.com
+smartinnovate.net
+soax.com
+srafx.com
+thedynamicleap.com
+triplesai.com
+vaicore.site

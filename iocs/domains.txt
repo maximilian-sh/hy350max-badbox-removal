@@ -1,0 +1,27 @@
+# BADBOX 2.0 — Magcubic HY350 Max (Allwinner H726) — C2 / telemetry domains
+# One domain per line. '#' = comment. Confirmed via on-device DNS capture (Pi-hole).
+#
+# --- Confirmed from public IOC reports (HUMAN Security, Kavan00 report) ---
+api.pixelpioneerss.com       # primary C2 / stage 1  (resolved to 64.32.27.247)
+sta.smartinnovate.net        # payload distribution
+bur.thedynamicleap.com       # secondary C2 / stage 2
+kkoip.com                    # SOAX residential-proxy control
+soax.com                     # proxy network
+event-api.aodintech.com      # telemetry exfiltration
+pb-api.aodintech.com         # ad-injection config
+store-api.aodintech.com      # silent app installation
+ota.triplesai.com            # OTA updates (reinstalls malware)
+otaapi.triplesai.com         # OTA fallback
+ota-api.aodintech.com        # OTA fallback (observed live)
+shortx.srafx.com             # HTClauncher C2
+hotack.com                   # Hotack SDK domain
+#
+# --- NEW domains captured live on this device (not in prior public lists) ---
+# Pattern: "int." + invented word + cheap TLD
+int.vaicore.site
+int.dewrain.life
+int.akisinn.info
+#
+# --- Telemetry / measurement seen alongside C2 (block at your discretion) ---
+statsigapi.net
+app-measurement.com

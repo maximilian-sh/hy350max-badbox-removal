@@ -1,0 +1,7 @@
+# BADBOX 2.0 — Magcubic HY350 Max (Allwinner H726) — hardcoded C2 IPs
+# Block these at the gateway/firewall. DNS sinkholing does NOT catch hardcoded IPs.
+#
+139.199.190.220   # Tencent Cloud — OTA fallback
+128.12.122.35     # C2 geolocation data
+103.124.165.222   # hardcoded C2 IP (bypasses DNS — block at firewall)
+64.32.27.247      # resolved IP of api.pixelpioneerss.com (primary C2) — may rotate

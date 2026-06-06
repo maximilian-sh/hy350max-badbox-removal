@@ -1,0 +1,12 @@
+# BADBOX 2.0 — Magcubic HY350 Max (Allwinner H726) — malicious Android packages
+# Preinstalled in factory firmware (super.fex / product partition) unless noted.
+#
+com.htc.storeos                    # silent app installer — THE dropper; removing it breaks the runtime download chain
+com.htc.htcotaupdate               # unencrypted OTA — reinstalls malware after factory reset
+com.htc.expandsdk                  # ad injection + persistence
+com.htc.eventuploadservice         # device telemetry exfiltration
+com.hotack.writesn                 # proxy helper
+com.hotack.silentsdk               # SOAX proxy agent (RAT/dropper) — NOT preinstalled; pulled at runtime by StoreOS
+com.htc.htclauncherhighenglishd08  # malicious launcher (if present)
+#
+# Note: device advertises itself as an "ADT-3" device — a known BADBOX 2.0 tell.
