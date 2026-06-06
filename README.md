@@ -59,6 +59,18 @@ stuck on the same projector. It is a trail of breadcrumbs, not a polished tool.
 > flashing — p1 firmware contains IR support (`cir_param` in DTB, `sunxi-ir` in super,
 > plus `ble_remote`/`bt_remote`).
 
+### Where to get the stock firmware
+
+You supply your own stock image (this repo distributes no binaries). The vendor
+publishes them here:
+
+- **HY350 Max (h726_p1):** <https://www.magcubic-support.com/newsinfo/3145143.html>
+- **All firmware / downloads index:** <https://www.magcubic-support.com/xw>
+
+> The vendor image is the **malware-laden stock** — that's the input you clean with the
+> recipe below, not something to flash as-is. Confirm the build matches your board
+> before flashing.
+
 ---
 
 ## What the malware is
