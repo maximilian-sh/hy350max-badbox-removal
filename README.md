@@ -14,8 +14,8 @@ Reverse-engineering notes and a **reproducible firmware-cleaning recipe** for th
 ## Disclaimer
 
 This reverse-engineering work was done **entirely with [Claude](https://claude.com/claude-code)**
-(an AI assistant) driving the analysis, the firmware unpacking/repacking, and the
-debugging. I'm publishing the notes as-is.
+driving the analysis, the firmware unpacking/repacking, and the debugging. I'm
+publishing the notes as-is.
 
 **I take no responsibility for anything that happens to your device or network.** This
 worked on my unit; it may brick yours. There are no guarantees that any of this is
