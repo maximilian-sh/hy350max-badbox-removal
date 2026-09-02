@@ -131,10 +131,15 @@ image (un)packer (the author used a small `awimg.py` with `list/extract/replace/
 ### 1. Remove the malware (debloat)
 
 ```bash
-# Unpack the Allwinner image, then extract the super partition
-#   awimg.py extract <update.img> super.fex
-simg2img super.fex super.raw        # sparse -> raw, if needed
-lpunpack super.raw ./super_out      # -> system_a, vendor_a, product_a (ext4)
+# Unpack the Allwinner image. NOTE: the second argument is an output DIRECTORY,
+# not a file to select -- all ~57 .fex files are written into it.
+#   awimg.py extract <update.img> <output_dir/>
+./awimg.py extract update.img ./unpacked/
+
+# super.fex is an Android sparse image (magic 3aff26ed); confirm, then convert
+od -A d -t x1 -N 4 ./unpacked/super.fex
+simg2img ./unpacked/super.fex super.raw   # sparse -> raw
+lpunpack super.raw ./super_out            # -> system_a, vendor_a, product_a (ext4)
 
 # Delete the malware APKs WITHOUT mounting (works unprivileged in Docker).
 # The preinstalled packages live under product (product_a). Use debugfs:
@@ -165,18 +170,31 @@ byte offset 123 = 0x03    (offsets 120–123 hold the flags field)
 ### 3. Put the modified partitions back
 
 ```bash
-#   awimg.py replace <update.img> super  super.new.fex
-#   awimg.py replace <update.img> vbmeta vbmeta.new.fex
+# Signature: replace <image.img> <filename> <new_file> <out.img>
+# <filename> is the name as printed by `awimg.py list` -- i.e. "super.fex", not "super".
+./awimg.py replace update.img super.fex  super.new.fex  out.img
+./awimg.py replace out.img    vbmeta.fex vbmeta.new.fex out2.img
 # (checksums are recomputed automatically on repack)
 ```
 
 ### 4. Bypass the version lock
 
-The bootloader refuses to flash an image with an equal/older build date. Bump it:
+The bootloader refuses to flash an image whose build date is **equal to or older than
+the build currently installed on the device** -- the *installed* build, not the build of
+the image you downloaded. If your projector already runs a newer build than the vendor
+page offers, you must clear *that* date.
 
+`sunxi_version.fex` is a plain 40-byte ASCII file: two identical lines of exactly 20
+bytes each. No `dd` offsets needed -- just rewrite it, keeping the length at 40:
+
+```bash
+# original content, for reference:
+#   2026-01-13 18:48:12\n2026-01-13 18:48:12\n
+printf '2027-12-31 23:59:59\n2027-12-31 23:59:59\n' > sunxi_version_new.fex
+wc -c sunxi_version_new.fex        # must be exactly 40
 ```
-sunxi_version.fex  date field  ->  set to a future date (e.g. 2027-12-31) via dd
-```
+
+Then `awimg.py replace` it in like any other file. Every reflash needs a fresh bump.
 
 ### 5. Flash via USB
 
