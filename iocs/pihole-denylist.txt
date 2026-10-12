@@ -18,3 +18,13 @@ srafx.com
 thedynamicleap.com
 triplesai.com
 vaicore.site
+#
+# --- Unverified candidates (issue #1) — seen live on a second unit, not analysed.
+# --- Not included above; uncomment/add at your discretion.
+# ip4exordir.shop
+# zeromedia.cloud
+# zeasn.tv
+# dxp.baidu.com
+#
+# mphotool.com — casting licence server. Blocking it is fine ONLY after casting has
+# re-activated once following a flash; otherwise AirPlay/DLNA stay disabled.

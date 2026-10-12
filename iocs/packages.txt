@@ -1,12 +1,22 @@
 # BADBOX 2.0 — Magcubic HY350 Max (Allwinner H726) — malicious Android packages
-# Preinstalled in factory firmware (super.fex / product partition) unless noted.
 #
-com.htc.storeos                    # silent app installer — THE dropper; removing it breaks the runtime download chain
-com.htc.htcotaupdate               # unencrypted OTA — reinstalls malware after factory reset
+# --- Preinstalled as real APKs in product_a (delete these) ---
+com.htc.storeos                    # /app/StoreOs_QZ — silent app installer, THE dropper; removing it breaks the runtime download chain
+com.htc.htcotaupdate               # /app/HtcOtaUpdate_QZ — unencrypted OTA, reinstalls malware after factory reset
+com.android.vending                # /priv-app/Tubesky — fake Play Store. HY350 Max only: elsewhere this is the real Google Play
+#
+# --- Referenced only as strings (/vendor/etc/awbms_config, MagcubicOS.apk) ---
+# No APK on the 20260113.184230 image (issue #1). Delete them if your build has them.
 com.htc.expandsdk                  # ad injection + persistence
 com.htc.eventuploadservice         # device telemetry exfiltration
 com.hotack.writesn                 # proxy helper
-com.hotack.silentsdk               # SOAX proxy agent (RAT/dropper) — NOT preinstalled; pulled at runtime by StoreOS
-com.htc.htclauncherhighenglishd08  # malicious launcher (if present)
+com.hotack.silentsdk               # SOAX proxy agent (RAT/dropper) — pulled at runtime by StoreOS
+com.htc.htclauncherhighenglishd08  # malicious launcher
+#
+# --- NOT malicious on its own — do not remove ---
+# com.htc.magcubicos  (MagcubicOS.apk) — vendor launcher with the projector settings (keystone, projection mode)
+#
+# --- Other implants ---
+# /system/xbin/hotacksu (system_a) — su binary; gives the shell user (uid 2000) root, SELinux is permissive
 #
 # Note: device advertises itself as an "ADT-3" device — a known BADBOX 2.0 tell.

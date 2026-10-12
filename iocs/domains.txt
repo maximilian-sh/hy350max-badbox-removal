@@ -10,6 +10,7 @@ soax.com                     # proxy network
 event-api.aodintech.com      # telemetry exfiltration
 pb-api.aodintech.com         # ad-injection config
 store-api.aodintech.com      # silent app installation
+cdn-store.aodintech.com      # store CDN (observed live, issue #1)
 ota.triplesai.com            # OTA updates (reinstalls malware)
 otaapi.triplesai.com         # OTA fallback
 ota-api.aodintech.com        # OTA fallback (observed live)
@@ -25,3 +26,13 @@ int.akisinn.info
 # --- Telemetry / measurement seen alongside C2 (block at your discretion) ---
 statsigapi.net
 app-measurement.com
+hmma.baidu.com               # Baidu analytics (also observed live in issue #1)
+#
+# --- Candidates from a second unit (issue #1) — seen live, NOT analysed yet ---
+ip4exordir.shop
+zeromedia.cloud
+zeasn.tv                     # smart-TV content/ad platform
+dxp.baidu.com
+#
+# --- Functional, NOT malware — blocking has side effects ---
+server.mphotool.com          # AirPlay/DLNA licence activation; must be reachable once after each flash
