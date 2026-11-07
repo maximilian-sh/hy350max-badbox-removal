@@ -1,0 +1,20 @@
+# Magcubic HY450 MAX (build Projector_20260821.111618): domains seen in APK strings and first-boot DNS
+# Companion to ../../iocs/domains.txt; nothing in the main lists is changed. Evidence and limits: ANALYSIS.md.
+# One domain per line. '#' = comment.
+#
+# --- Store and OTA backend under a new parent domain ---
+hanychx.com                  # parent of the two hosts below
+appstore.hanychx.com         # com.hy.storeos: /device/app/install/report, /device/channel/check, /device/sign/app/list, /device/sign/app/update/check; also in com.htc.magcubicos
+ota.hanychx.com              # com.hy.storeos and com.hy.hyotaupdate: /api/ota/check, /api/ota/upgradeResult
+# faq.hanychx.com            # privacy-policy host only, not a C2
+#
+# --- Endpoints on domains already in ../../iocs/domains.txt (string evidence, behaviour not established) ---
+# pb-api.aodintech.com/api/collections/addialog|adtype|blacklist/records   com.hotack.screensaversdk (ad-dialog configuration)
+# store-api.aodintech.com/upload/create, /upload/chunk, /report/address    com.htc.closedialog (upload capability, payload not determined)
+# store-api.aodintech.com/sign/app/list                                    com.htc.btremote.receiver
+# acc-saas.zeasn.tv/log/batch/report, /log/open/report                     com.hotack.screensaversdk (telemetry)
+#
+# --- Seen at first boot, functional or unclear, not malware by themselves ---
+# relay.luminago.app         # vendor cloud relay of the projector platform (docs.luminago.app)
+# ntp.ntsc.ac.cn             # Chinese national NTP
+# www.google.cn              # probably the connectivity check

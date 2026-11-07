@@ -1,0 +1,11 @@
+# SHA-256 of APKs found on a Magcubic HY450 MAX, build Projector_20260821.111618
+# Format: <sha256>  <package> <versionName>
+3f0d4dfea5905b109a537d0368d8ba8da7b492c8c814f4bd78f16be3dd389876  com.hy.storeos 2609042030
+8887334123d450a6dc7b5d82d49688f9319b14f27d9c5686301d4f2cf4ed13ea  com.hy.hyotaupdate 2608191543
+6fc7c0add7f42c93d1cb09adc6bf434e20be4b77ca737900e1254dc3f353bb7b  com.hotack.screensaversdk 2611041809
+c71ab472f0607ddd03a62a0bfaccc80740a0e16fe1c520f07550cb06b59cc292  com.htc.closedialog 2512271425
+a0c6ef808e8a764b69baf35a486fda0702daecd9a32e96a5ef9b5008b7038089  com.htc.btremote.receiver v3.0.0
+9f97199b0f7701ad57ccad361c1df41c6585d2e5e74d52e258b005642976052e  com.htc.magcubicos
+bf5c63329540a80baad75547915204e6cfcb2f1aa5dd9234f747beb57f5d90d7  com.htc.htcsetup_wizard_d55
+8ab67e6b161cf81d72bb068d4527e0547c3edcf0b05424ec59f15aafc6b4725a  com.android.toofifi
+ae812379f220409230fb07b2278cf80fc658b2b0edab1ecf6b6394064e632c96  com.htc.samescreen

@@ -1,0 +1,15 @@
+# Magcubic HY450 MAX (build Projector_20260821.111618): packages
+# Companion to ../../iocs/packages.txt; nothing in the main lists is changed. Evidence and limits: ANALYSIS.md.
+#
+# --- Renamed packages, prefix com.hy. instead of com.htc. ---
+com.hy.storeos                     # store and installer, uid system, INSTALL_PACKAGES/DELETE_PACKAGES/INJECT_EVENTS/READ_LOGS; appstore.hanychx.com and ota.hanychx.com
+com.hy.hyotaupdate                 # OTA updater, ota.hanychx.com
+com.hotack.screensaversdk          # ad SDK installed under /data/app; pb-api.aodintech.com ad-dialog records
+com.htc.closedialog                # BootReceiver and RemoteControlService; store-api.aodintech.com upload endpoints
+#
+# --- Present on that unit, function not established (casting and remote stack, disabled as a set in the tested mitigation) ---
+# com.htc.btremote.receiver, com.htc.samescreen, com.android.toofifi (hosts the process com.huawei.connection),
+# com.mphotool.airplay, com.mphotool.dlna, com.softwinner.miracastReceiver
+#
+# --- Not to be removed ---
+# com.htc.magcubicos (launcher and projector settings), com.htc.htcbluetoothremotecontrol (Bluetooth remote)
